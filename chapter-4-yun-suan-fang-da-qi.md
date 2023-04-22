@@ -2,7 +2,7 @@
 description: by mjuicem
 ---
 
-# Chapter 4 运算放大器
+# 🥰 Chapter 4 运算放大器
 
 ## 理想运算放大器 ideal op amp
 
