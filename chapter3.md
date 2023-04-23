@@ -2,7 +2,7 @@
 description: by mjuicem
 ---
 
-# Chapter 3 电路分析法
+# 😘 Chapter 3 电路分析基础
 
 ### 叠加方法
 
