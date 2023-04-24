@@ -8,55 +8,85 @@ description: by mjuicem
 
 不同于电阻，电容和电感都是动态原件，即其具有记忆功能，能够在外界激励的作用下储存能量，这一整章都是围绕的电容和电容的特性展开的，故在此先介绍下电容与电感的特性
 
-### 电容：
+### 电容(capacitor)：
+
 ![image](https://user-images.githubusercontent.com/114148730/233823390-32182f9e-302e-4f29-8079-730c28184b7b.png)
 
-电容的串并:
-![image](https://user-images.githubusercontent.com/114148730/233823415-38594735-d706-4df3-a4ec-72046412807e.png)
-电容的串并关系与电感正好相反，所以记忆起来很方便
+电容的作用是通交流，阻直流，故在直流稳态时可看作是开路
 
-### 电感：
-![image](https://user-images.githubusercontent.com/114148730/233823444-d5b73304-28e9-4493-aac6-e6b05d7725f2.png)
-电感的作用是阻碍电流的变化，当流经电感线圈的电流为常数时，电感线圈两端电压为0，表现为通直流，阻交流的效果
-电感的串并：
-![image](https://user-images.githubusercontent.com/114148730/233823579-3a9bc8d8-29df-4cd7-8c6a-b87d744ce5ac.png)
-![image](https://user-images.githubusercontent.com/114148730/233823584-02a80484-aedb-4b4a-9d14-5cc22b96c558.png)
+注意：电容的电压不能发生跃变
+
+$$i_c=C{du_c\over dt}$$
+
+电容的串并: ![image](https://user-images.githubusercontent.com/114148730/233823415-38594735-d706-4df3-a4ec-72046412807e.png)&#x20;
+
+(电容的串并关系与电感（或者说与电阻串并联计算方式）正好相反，所以记忆起来很方便)
+
+### 电感(inductor)：
+
+![image](https://user-images.githubusercontent.com/114148730/233823444-d5b73304-28e9-4493-aac6-e6b05d7725f2.png)&#x20;
+
+电感的作用是阻碍电流的变化，当流经电感线圈的电流为常数时，电感线圈两端电压为0，表现为通直流，阻交流的效果，在直流稳态时，视为短路
+
+注意：电感的电压不能发生跃变！
+
+$$u_L=L{di_L\over dt}$$
+
+电感的串并： ![image](https://user-images.githubusercontent.com/114148730/233823579-3a9bc8d8-29df-4cd7-8c6a-b87d744ce5ac.png) ![image](https://user-images.githubusercontent.com/114148730/233823584-02a80484-aedb-4b4a-9d14-5cc22b96c558.png)
+
+(电感的串并关系与电阻串并联计算方式正好相同）
+
+### 换路定则
+
+换路：由电路开关的闭合或断开、电路元件参数变化引起的电路变化称为换路
+
+根据上述电容、电感的分析，我们不难得到：
+
+$$i_L(0^+)=i_L(0^-)$$：电感的电流在换路瞬间不能突变
+
+$$U_C(0^+)=U_C(0^-)$$：电容电压在换路瞬间不能突变
+
 
 
 ## RC和RL电路的固有响应
 
-顾名思义，RC电路即为电阻电容电路，RL电路即为电阻电感电路
-固有响应是指t>0时无外接激励
-![image](https://user-images.githubusercontent.com/114148730/233823689-3edcca99-8694-4538-bd0c-eeb3f352c601.png)
+顾名思义，RC电路即为电阻电容电路，RL电路即为电阻电感电路 固有响应是指t>0时无外接激励 ![image](https://user-images.githubusercontent.com/114148730/233823689-3edcca99-8694-4538-bd0c-eeb3f352c601.png)
 
 ## RC和RL电路的阶跃响应
-阶跃响应是指t=0时电感或电容没有能量的存储
-![image](https://user-images.githubusercontent.com/114148730/233824006-142ad996-b9c6-4ab6-a323-42764d693b7d.png)
 
+阶跃响应是指t=0时电感或电容没有能量的存储 ![image](https://user-images.githubusercontent.com/114148730/233824006-142ad996-b9c6-4ab6-a323-42764d693b7d.png)
 
 ## RC和RL电路的一般方法
+
 ![image](https://user-images.githubusercontent.com/114148730/233824045-bc4dac60-9094-45d6-a0e6-6553d21b76f3.png)
 
+上述公式为总结公式，在进行RC和RL电路时域分析时，只需要将上述公式中的y更换为i或u即可。
+
+也就是: $$u_C(t)=u_C(+∞)+[u_C(t_0^+)-u_C(+∞)]e^{-t\over RC}$$(其中，R 是电路换路后，将电容断开，从端口看进去的Thevenin等效电阻)
+
+$$i_L(t)=i_L(+∞)+[i_L(t_0^+)-i_L(+∞)]e^{-Rt\over L}$$（其中，R是电路换路后。将电感断开，从端口看进去的Thevenin等效电阻）
 
 ## RC和RL电路拨两次开关问题的思路：
 
 ### 1.三要素法：
+
 * 算出时间常数
 * 判断t——>∞时y的数值
-* t（0+） = t(0-)
-tips:注意求解三要素时，公式中的L和C都为等效元件，R的数值为L或C两端的戴维南等效电路算出的电阻
+* t（0+） = t(0-)&#x20;
+* tips:注意求解三要素时，公式中的L和C都为等效元件，R的数值为L或C两端的戴维南等效电路算出的电阻
 
 ### 2.第一次拨开关
+
 * 正确画出电路图
 * 三要素法
 * 算出第二次拨开关时端点的数值
 
 ### 3.第二次拨开关
+
 * 正确画出电路图
 * 三要素法
 * 初状态为第一次拨开关的末状态
 
-
 ## Summary:
-期末：1题（有几率考两次拨开关问题）
-这一章围绕的就是RC和RL电路的拨开关问题，在掌握了一般方法后，还应该熟悉用戴维南等效电路求等效电阻的方法，总得来说知识点不难，但是题目的情境往往比较复杂，所以需要多刷题...
+
+期末：1题（有几率考两次拨开关问题） 这一章围绕的就是RC和RL电路的拨开关问题，在掌握了一般方法后，还应该熟悉用戴维南等效电路求等效电阻的方法，总得来说知识点不难，但是题目的情境往往比较复杂，所以需要多刷题...
