@@ -9,7 +9,8 @@ description: by mjuicem
 
 
 
-**欧拉公式：**$$e^{j\varphi} = cos\varphi + jsin\varphi $$，$$e^{-j\varphi} = cos\varphi - jsin\varphi$$  
+**欧拉公式：** $$e^{j\varphi} = cos\varphi + jsin\varphi $$
+$$e^{-j\varphi} = cos\varphi - jsin\varphi$$  
 
 
 
